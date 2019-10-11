@@ -23,15 +23,6 @@ toolkit:
     entry_file: step.sh
 
 inputs:
-  - is_debug_mode: 'no'
-    opts:
-      title: 'Debug mode?'
-      description: |
-        Setep prints additional debug information if this option is enabled
-      value_options:
-        - 'yes'
-        - 'no'
-
   - webhook_url:
     opts:
       title: 'Discord channel Webhook URL'
@@ -58,3 +49,12 @@ inputs:
         - 'success'
         - 'failed'
         - 'aborted'
+
+  - is_debug_mode: 'no'
+    opts:
+      title: 'Debug mode?'
+      description: |-
+        Step prints additional debug information if this option is enabled
+      value_options:
+        - 'yes'
+        - 'no'
