@@ -1,18 +1,9 @@
-#
-# A couple of useful guides & docs:
-#
-# - Main Bitrise CLI docs: https://github.com/bitrise-io/bitrise/tree/master/_docs
-# - Step Development Guideline: https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
-# - Bitrise.yml format spec: https://github.com/bitrise-io/bitrise/blob/master/_docs/bitrise-yml-format-spec.md
-# - Bitrise docs: http://devcenter.bitrise.io/
-# - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
-
 title: |-
   Send a Discord message
 summary: |
-  Send a [Discord](https://discordapp.com) message to a text channel
+  Send a [Discord](https://discordapp.com) message with the build status
 description: |
-  Send a [Discord](https://discordapp.com) message to a text channel using Discord Webhooks
+  Send a [Discord](https://discordapp.com) message to a text channel with the build status using Discord Webhooks
 
   To find your text channel **webhook** visit: [https://github.com/Akizo96/de.isekaidev.discord.wbbBridge/wiki/How-to-get-Webhook-ID-&-Token](https://github.com/Akizo96/de.isekaidev.discord.wbbBridge/wiki/How-to-get-Webhook-ID-&-Token)
 website: https://gitlab.com/lighthouseit/packages/bitrise-discord-message
