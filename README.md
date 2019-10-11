@@ -1,6 +1,6 @@
 # Discord message
 
-Send a Discord message to a text channel using Discord Webhooks
+Send a Discord message to a text channel with the build status
 
 ## How to use this Step
 
