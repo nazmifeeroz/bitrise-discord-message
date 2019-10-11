@@ -27,7 +27,7 @@ inputs:
     opts:
       title: 'Discord channel Webhook URL'
       description: |
-        **Either webhook\_url with webhook token is required.**
+        **Webhook\_url with webhook token is required.**
 
         To obtain the channel **Webhook** visit: https://github.com/Akizo96/de.isekaidev.discord.wbbBridge/wiki/How-to-get-Webhook-ID-&-Token
       is_required: true
@@ -36,7 +36,6 @@ inputs:
   - preset_status: 'auto'
     opts:
       title: 'Set Specific Status'
-      summary: ''
       description: |-
         If set, this step will set a specific status instead of reporting the current build status.
 
