@@ -9,6 +9,7 @@ const preset_status = process.argv[4]; // preset_status
 const build_date = new Date(
   process.env.BITRISE_BUILD_TRIGGER_TIMESTAMP
 ).toISOString();
+const git_branch = process.env.BITRISE_GIT_BRANCH;
 
 // testing parameters
 if (debug == null || webhook_url == null || preset_status == null) {
@@ -90,6 +91,11 @@ axios
           {
             name: 'Workflow',
             value: workflow_title,
+            inline: true
+          },
+          {
+            name: 'Branch',
+            value: git_branch,
             inline: true
           }
         ],
