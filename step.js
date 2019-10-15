@@ -6,12 +6,9 @@ const moment = require('moment');
 const debug = process.argv[2]; // debug yes/no
 const webhook_url = process.argv[3]; // webhook_url
 const preset_status = process.argv[4]; // preset_status
-const app_title = process.env.BITRISE_APP_TITLE || '';
-const workflow_title = process.env.BITRISE_TRIGGERED_WORKFLOW_TITLE || '';
-const build_number = process.env.BITRISE_BUILD_NUMBER || '';
-const build_url = process.env.BITRISE_BUILD_URL || '';
-const build_timestamp =
-  process.env.BITRISE_BUILD_TRIGGER_TIMESTAMP || new Date().toISOString();
+const build_date = new Date(
+  process.env.BITRISE_BUILD_TRIGGER_TIMESTAMP
+).toISOString();
 
 // testing parameters
 if (debug == null || webhook_url == null || preset_status == null) {
@@ -90,7 +87,9 @@ axios
           }
         ],
         footer: {
-          text: `Triggered ${moment(build_timestamp).fromNow()}`
+          text: `Triggered on ${moment(build_date).format(
+            'YYYY.MM.DD HH:mm'
+          )} - #${build_number}`
         }
       }
     ]
