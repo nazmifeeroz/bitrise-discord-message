@@ -25,13 +25,20 @@ toolkit:
 inputs:
   - webhook_url:
     opts:
-      title: 'Discord channel Webhook URL'
+      title: 'Discord Webhook URL'
       description: |
         **Webhook\_url with webhook token is required.**
 
         To obtain the channel **Webhook** visit: https://github.com/Akizo96/de.isekaidev.discord.wbbBridge/wiki/How-to-get-Webhook-ID-&-Token
       is_required: true
       is_sensitive: true
+
+  - mention_role: '@everyone'
+    opts:
+      title: 'Mention Role'
+      description: |-
+        The Discord role to be mentioned if a build failure
+      is_required: false
 
   - preset_status: 'auto'
     opts:
