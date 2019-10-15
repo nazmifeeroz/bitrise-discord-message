@@ -27,6 +27,14 @@ if (debug === 'yes') {
   console.log('Build URL: ' + build_url);
 }
 
+function capitalize(text) {
+  return text
+    .toLowerCase()
+    .split(' ')
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(' ');
+}
+
 function getState() {
   if (preset_status !== 'auto') {
     return preset_status;
@@ -39,7 +47,7 @@ function getState() {
 
 function getStateTitle() {
   if (preset_status !== 'auto') {
-    return preset_status;
+    return capitalize(preset_status);
   }
   if (process.env.BITRISE_BUILD_STATUS === '0') {
     return 'Success';
@@ -69,8 +77,7 @@ axios
     embeds: [
       {
         color: getStateColor(),
-        title: `${getStateTitle().toUpperCase()} build - #${build_number}`,
-        url: build_url || 'https://bitrise.io',
+        title: `${getStateTitle()} @ ${git_branch} → ${workflow_title}`,
         thumbnail: {
           url: 'https://img.stackshare.io/service/2686/wFlFGsF3_400x400.jpg'
         },
