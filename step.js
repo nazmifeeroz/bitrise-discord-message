@@ -6,6 +6,12 @@ const moment = require('moment');
 const debug = process.argv[2]; // debug yes/no
 const webhook_url = process.argv[3]; // webhook_url
 const preset_status = process.argv[4]; // preset_status
+const mention_role = process.argv[5]; // mention_role
+
+const app_title = process.env.BITRISE_APP_TITLE;
+const workflow_title = process.env.BITRISE_TRIGGERED_WORKFLOW_TITLE;
+const build_number = process.env.BITRISE_BUILD_NUMBER;
+const build_url = process.env.BITRISE_BUILD_URL || 'https://bitrise.io';
 const build_date = new Date(
   process.env.BITRISE_BUILD_TRIGGER_TIMESTAMP
 ).toISOString();
@@ -74,13 +80,14 @@ function getStateColor() {
 
 axios
   .post(webhook_url, {
-    content: getState() === 'failed' ? '@everyone' : '',
+    content: getState() === 'failed' ? mention_role : '',
     embeds: [
       {
         color: getStateColor(),
         title: `${getStateTitle()} @ ${git_branch} → ${workflow_title}`,
+        url: build_url,
         thumbnail: {
-          url: 'https://img.stackshare.io/service/2686/wFlFGsF3_400x400.jpg'
+          url: 'https://i.imgur.com/DZZ1AyE.jpg'
         },
         fields: [
           {
