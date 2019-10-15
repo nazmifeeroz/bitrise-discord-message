@@ -67,7 +67,7 @@ function getStateColor() {
     case 'running':
       return '41727';
     case 'aborted':
-      return '50687';
+      return '16762112';
     case 'failed':
       return '16720216';
     default:
