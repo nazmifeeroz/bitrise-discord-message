@@ -26,6 +26,7 @@ workflows:
       - _test_running
       - _test_success
       - _test_failed
+      - _test_aborted
 
   _test_running:
     steps:
@@ -51,6 +52,15 @@ workflows:
           inputs:
             - webhook_url: '$DISCORD_WEBHOOK_URL'
             - preset_status: failed
+            - is_debug_mode: 'yes'
+
+  _test_aborted:
+    steps:
+      - path::./:
+          title: Test aborted status
+          inputs:
+            - webhook_url: '$DISCORD_WEBHOOK_URL'
+            - preset_status: aborted
             - is_debug_mode: 'yes'
 
   # ----------------------------------------------------------------
