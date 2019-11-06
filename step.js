@@ -12,9 +12,7 @@ const app_title = process.env.BITRISE_APP_TITLE;
 const workflow_title = process.env.BITRISE_TRIGGERED_WORKFLOW_TITLE;
 const build_number = process.env.BITRISE_BUILD_NUMBER;
 const build_url = process.env.BITRISE_BUILD_URL || 'https://bitrise.io';
-const build_date = new Date(
-  process.env.BITRISE_BUILD_TRIGGER_TIMESTAMP
-).toISOString();
+const build_date = new Date().toISOString();
 const git_branch = process.env.BITRISE_GIT_BRANCH;
 
 // testing parameters
