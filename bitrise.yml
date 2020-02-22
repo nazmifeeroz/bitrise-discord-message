@@ -36,6 +36,7 @@ workflows:
             - webhook_url: '$DISCORD_WEBHOOK_URL'
             - preset_status: running
             - is_debug_mode: 'yes'
+            - apk_public_url: 'some/path/url'
 
   _test_success:
     steps:

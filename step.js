@@ -7,6 +7,7 @@ const debug = process.argv[2]; // debug yes/no
 const webhook_url = process.argv[3]; // webhook_url
 const preset_status = process.argv[4]; // preset_status
 const mention_role = process.argv[5]; // mention_role
+const apk_public_url = process.argv[6];
 
 const app_title = process.env.BITRISE_APP_TITLE;
 const workflow_title = process.env.BITRISE_TRIGGERED_WORKFLOW_TITLE;
@@ -83,7 +84,7 @@ axios
       {
         color: getStateColor(),
         title: `${getStateTitle()} @ ${git_branch} → ${workflow_title}`,
-        url: build_url,
+        url: apk_public_url,
         thumbnail: {
           url: 'https://i.imgur.com/DZZ1AyE.jpg'
         },
